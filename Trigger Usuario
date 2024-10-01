@@ -1,0 +1,15 @@
+DELIMITER //
+CREATE TRIGGER usuarios_insert AFTER INSERT ON usuarios
+FOR EACH ROW BEGIN INSERT INTO audi_usuario (dni, operacion, direccion_nuevo, telefono_nuevo, email_nuevo) 
+VALUES (NEW.dni, 'INSERT', NEW.direccion, NEW.telefono, NEW.email);
+END; 
+//
+
+DELIMITER //
+CREATE TRIGGER usuarios_update BEFORE UPDATE ON usuarios
+FOR EACH ROW BEGIN  INSERT INTO audi_usuario (dni, operacion, direccion_nuevo, telefono_nuevo, email_nuevo, direccion_viejo, telefono_viejo, email_viejo)
+VALUES (OLD.dni, 'UPDATE', OLD.direccion, OLD.telefono, OLD.email, NEW.direccion, NEW.telefono, NEW.email);
+END; 
+//
+
+DELIMITER;
