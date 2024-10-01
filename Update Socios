@@ -1,0 +1,1 @@
+UPDATE socios SET fInscripcion = 2005-08-12, fRenovacion = 2010-06-04, fBaja = 2012-06-26, emmac = 2011-03-11, activo= 0 WHERE sid =10.0001;
