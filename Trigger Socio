@@ -1,0 +1,15 @@
+DELIMITER //
+CREATE TRIGGER socios_insert AFTER INSERT ON socios
+FOR EACH ROW BEGIN INSERT INTO audi_socio (sid, fInscripcionN, fRenovacionN, fBajaN, emmacN, activoN) 
+VALUES (NEW.sid, 'INSERT', NEW.fInscripcion, NEW.fRenovacion, NEW.fBaja, NEW.emmac, NEW.activo);
+END; 
+//
+
+DELIMITER //
+CREATE TRIGGER socios_update BEFORE UPDATE ON socios
+FOR EACH ROW BEGIN  INSERT INTO audi_socio (sid, fInscripcionN, fInscripcionV, fRenovacionN, fRenovacionV, fBajaN, fBajaV, emmacN, emmacV, activoN, activoV)
+VALUES (OLD.sid, 'UPDATE', OLD.fInscripcion, OLD.fRenovacion, OLD.fBaja, OLD.emmac, OLD.activo, NEW.fInscripcion, NEW.fRenovacion, NEW.fBaja, NEW.emmac, NEW.activo);
+END; 
+//
+
+DELIMITER;
