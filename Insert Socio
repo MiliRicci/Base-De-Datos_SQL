@@ -1,0 +1,1 @@
+INSERT INTO socios(uid, fInscripcion, fRenovacion, fBaja, emmac, activo) VALUES (18, 2009-03-02, null, null, NULL, 0);
