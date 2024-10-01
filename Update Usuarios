@@ -1,0 +1,1 @@
+UPDATE usuarios SET direccion = "av brasil", telefono = 111222333, email = "jorjito123@gmail.com" WHERE id= 1;
