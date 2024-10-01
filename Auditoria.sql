@@ -1,0 +1,33 @@
+DROP TABLE `audi_usu`;
+
+CREATE TABLE `audi_usu` (`id_usu` INT(11) NOT NULL AUTO_INCREMENT,
+                         `dni` INT(11) NOT NULL,
+                         `operacion` VARCHAR(50) NOT NULL,
+                         `fecha` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+                         `activoV` INT(11) NOT NULL, 
+                         `activoN` INT(11) NOT NULL,
+                         `direccionV` VARCHAR(80) NOT NULL,
+                         `direccionN` VARCHAR(80) NOT NULL,
+                         `telefonoV` VARCHAR(15) NULL DEFAULT NULL,
+								 `telefonoN` VARCHAR(15) NULL DEFAULT NULL,
+								 `emailV` VARCHAR(50) NOT NULL,
+								 `emailN` VARCHAR(50) NOT NULL,
+								 PRIMARY KEY (`id_usu`)) ENGINE = INNODB;
+
+CREATE TABLE `audi_socio` (`id_socio` (11) NOT NULL AUTO_INCREMENT,
+                           `sid`INT(11) NOT NULL,
+                           `operacion` VARCHAR(50) NOT NULL,
+                           `fecha` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+                           `uidV` INT(11),
+                           `uidN` INT(11),
+                           `fInscripcionV` DATE,
+                           `fInscripcionN` DATE,
+                           `fRenovacionV` DATE NULL DEFAULT NULL,
+                           `fRenovacionN` DATE NULL DEFAULT NULL,
+                           `fBajaV` DATE NULL DEFAULT NULL,
+                           `fBajaN` DATE NULL DEFAULT NULL,
+                           `emmacV` DATE NULL DEFAULT NULL,
+                           `emmacN` DATE NULL DEFAULT NULL,
+                           `activoV` INT(11) NOT NULL DEFAULT `1`,
+                           `activoN` INT(11) NOT NULL DEFAULT `1`,
+                           PRIMARY KEY (`id_socio`)) ENGINE = INNODB;
